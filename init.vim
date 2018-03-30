@@ -21,7 +21,6 @@ let g:spacevim_max_column = 180
 let g:spacevim_enable_googlesuggest = 0
 let g:spacevim_enable_tabline_filetype_icon = 1
 let g:spacevim_enable_os_fileformat_icon = 1
-let g:spacevim_lint_on_the_fly = 1
 let g:spacevim_enable_neomake = 0
 let g:spacevim_enable_ale = 1
 let g:spacevim_enable_ycm = 1
