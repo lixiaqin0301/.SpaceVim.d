@@ -20,6 +20,8 @@ let g:spacevim_default_indent = 4
 " }}}
 
 " SpaceVim Layers: {{{
+call SpaceVim#layers#load('lang#markdown')
+call SpaceVim#layers#load('lang#python')
 " }}}
 
 
