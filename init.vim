@@ -16,6 +16,7 @@ let g:spacevim_enable_os_fileformat_icon = 1
 let g:spacevim_buffer_index_type = 1
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 1
+let g:spacevim_default_indent = 4
 " }}}
 
 " SpaceVim Layers: {{{
