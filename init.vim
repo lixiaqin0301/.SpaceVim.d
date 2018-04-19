@@ -27,14 +27,14 @@ let g:spacevim_enable_ycm = 1
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '/home/lixq/toolchains/selfscripts/bin/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.', 're![_a-zA-Z]'],
+  \   'c,python' : ['->', '.', 're![_a-zA-Z]'],
   \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
   \             're!\[.*\]\s'],
   \   'ocaml' : ['.', '#'],
   \   'cpp,objcpp' : ['->', '.', '::'],
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'cs,java,javascript,typescript,d,perl6,scala,vb,elixir,go' : ['.'],
   \   'ruby' : ['.', '::'],
   \   'lua' : ['.', ':'],
   \   'erlang' : [':'],
