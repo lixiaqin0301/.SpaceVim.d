@@ -25,7 +25,7 @@ let g:spacevim_enable_neomake = 0
 let g:spacevim_enable_ale = 1
 let g:spacevim_enable_ycm = 1
 let g:ycm_python_binary_path = 'python3'
-let g:ycm_global_ycm_extra_conf = '/home/lixq/toolchains/selfscripts/bin/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.SpaceVim.d/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers =  {
   \   'c,python' : ['->', '.', 're![_a-zA-Z]'],
   \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
