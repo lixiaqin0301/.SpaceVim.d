@@ -1,11 +1,7 @@
-'''
-This file is NOT licensed under the GPLv3, which is the license for the rest of YouCompleteMe.
-'''
-
 import os
 import ycm_core
 
-FLAGS = [
+flags = [
     '-Wall',
     '-Wextra',
     '-Werror',
@@ -18,7 +14,7 @@ FLAGS = [
     '-isystem',
     '/usr/lib/gcc/x86_64-redhat-linux/7/include',
     '-isystem',
-    '/usr/lib/gcc/x86_64-redhat-linux/4.8.2/include',
+    '/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include',
     '-isystem',
     '/usr/lib/gcc/x86_64-redhat-linux/4.4.4/include',
     '-isystem',
@@ -29,60 +25,52 @@ FLAGS = [
     '/usr/include',
 ]
 
-COMPILATION_DATABASE_FOLDER = ''
+compilation_database_folder = ''
 
-if os.path.exists(COMPILATION_DATABASE_FOLDER):
-    DATABASE = ycm_core.CompilationDatabase(COMPILATION_DATABASE_FOLDER)
+if os.path.exists( compilation_database_folder ):
+  database = ycm_core.CompilationDatabase( compilation_database_folder )
 else:
-    DATABASE = None
+  database = None
 
-SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm']
+SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]
 
-def directory_of_this_script():
-    '''directory of this script'''
-    return os.path.dirname(os.path.abspath(__file__))
-
-
-def is_header_file(filename):
-    '''is header file'''
-    extension = os.path.splitext(filename)[1]
-    return extension in ['.h', '.hxx', '.hpp', '.hh']
+def DirectoryOfThisScript():
+  return os.path.dirname( os.path.abspath( __file__ ) )
 
 
-def get_compilation_info_for_file(filename):
-    '''get compilation info for file'''
-    if is_header_file(filename):
-        basename = os.path.splitext(filename)[0]
-        for extension in SOURCE_EXTENSIONS:
-            replacement_file = basename + extension
-            if os.path.exists(replacement_file):
-                compilation_info = DATABASE.get_compilation_info_for_file(replacement_file)
-                if compilation_info.compiler_flags_:
-                    return compilation_info
-        return None
-    return DATABASE.get_compilation_info_for_file(filename)
+def IsHeaderFile( filename ):
+  extension = os.path.splitext( filename )[ 1 ]
+  return extension in [ '.h', '.hxx', '.hpp', '.hh' ]
 
 
-def FlagsForFile(filename, **kwargs):
-    '''flags for file'''
-    if not DATABASE:
-        return {
-            'flags': FLAGS,
-            'include_paths_relative_to_dir': directory_of_this_script()
-        }
+def FindCorrespondingSourceFile( filename ):
+  if IsHeaderFile( filename ):
+    basename = os.path.splitext( filename )[ 0 ]
+    for extension in SOURCE_EXTENSIONS:
+      replacement_file = basename + extension
+      if os.path.exists( replacement_file ):
+        return replacement_file
+  return filename
 
-    compilation_info = get_compilation_info_for_file(filename)
-    if not compilation_info:
-        return None
 
-    final_flags = list(compilation_info.compiler_flags_)
+def FlagsForFile( filename, **kwargs ):
+  filename = FindCorrespondingSourceFile( filename )
 
-    try:
-        final_flags.remove('-stdlib=libc++')
-    except ValueError:
-        pass
-
+  if not database:
     return {
-        'FLAGS': final_flags,
-        'include_paths_relative_to_dir': compilation_info.compiler_working_dir_
+      'flags': flags,
+      'include_paths_relative_to_dir': DirectoryOfThisScript(),
+      'override_filename': filename
     }
+
+  compilation_info = database.GetCompilationInfoForFile( filename )
+  if not compilation_info.compiler_flags_:
+    return None
+
+  final_flags = list( compilation_info.compiler_flags_ )
+
+  return {
+    'flags': final_flags,
+    'include_paths_relative_to_dir': compilation_info.compiler_working_dir_,
+    'override_filename': filename
+  }
