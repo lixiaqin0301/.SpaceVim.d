@@ -56,7 +56,6 @@ call SpaceVim#layers#load('autocomplete', {
     \ 'auto-completion-complete-with-key-sequence-delay' : 0.1,
     \ 'auto-completion-enable-snippets-in-popup' : 0
     \ })
-
+call SpaceVim#layers#load('VersionControl')
 " }}}
-
 
