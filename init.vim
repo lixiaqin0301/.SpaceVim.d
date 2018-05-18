@@ -44,6 +44,22 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:spacevim_custom_plugins = [
   \ ['lyuts/vim-rtags'],
   \ ]
+let g:neomake_c_enabled_makers = ['gcc']
+let g:c_syntax_for_h = 1
+let g:neomake_gcc_args = [
+    \ '-fsyntax-only',
+    \ '-std=gnu99',
+    \ '-Wall',
+    \ '-I.',
+    \ '-I./src',
+    \ '-I./include',
+    \ '-DHAVE_CONFIG_H',
+    \ '-DDEFAULT_CONFIG_FILE="/usr/local/squid/etc/squid.conf"',
+    \ '-DDEFAULT_ACCESSLOG_PC_TEMPLATE="/usr/local/squid/var/logs/access_%host.log"',
+    \ '-DDEFAULT_SQUID_CLIENT="/usr/local/squid/bin/squidclient"', 
+    \ '-D_REENTRANT'
+    \ ]
+let g:neomake_shellcheck_args = ['-fgcc']
 " }}}
 
 " SpaceVim Layers: {{{
