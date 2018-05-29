@@ -27,20 +27,17 @@ let g:spacevim_enable_ycm = 1
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '~/.SpaceVim.d/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_semantic_triggers =  {
-  \   'c,python' : ['->', '.', 're![_a-zA-Z]'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
+"let g:ycm_semantic_triggers = {
+"  \   'c,cpp,python,sh': ['re!\w{2}'],
+"  \ }
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_invoke_completion = '<M-;>'
+let g:ycm_filetype_whitelist = { 
+  \ "c":1,
+  \ "cpp":1, 
+  \ "python":1,
+  \ "sh":1,
   \ }
-let g:ycm_min_num_of_chars_for_completion = 1
 let g:spacevim_custom_plugins = [
   \ ['lyuts/vim-rtags'],
   \ ]
