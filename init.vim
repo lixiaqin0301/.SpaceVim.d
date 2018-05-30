@@ -31,7 +31,7 @@ let g:ycm_confirm_extra_conf = 0
 "  \   'c,cpp,python,sh': ['re!\w{2}'],
 "  \ }
 let g:ycm_show_diagnostics_ui = 0
-let g:ycm_key_invoke_completion = '<M-;>'
+let g:ycm_key_invoke_completion = '<C-l>'
 let g:ycm_filetype_whitelist = { 
   \ "c":1,
   \ "cpp":1, 
