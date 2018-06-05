@@ -57,10 +57,10 @@ let g:neomake_gcc_args = [
     \ '-D_REENTRANT'
     \ ]
 let g:neomake_shellcheck_args = ['-fgcc']
+let g:spacevim_expand_tab = 0
 " }}}
 
 " SpaceVim Layers: {{{
-call SpaceVim#layers#load('lang#markdown')
 call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('autocomplete', {
     \ 'auto-completion-return-key-behavior' : 'nil',
