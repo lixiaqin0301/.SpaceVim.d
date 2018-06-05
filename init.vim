@@ -27,9 +27,10 @@ let g:spacevim_enable_ycm = 1
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '~/.SpaceVim.d/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-"let g:ycm_semantic_triggers = {
-"  \   'c,cpp,python,sh': ['re!\w{2}'],
-"  \ }
+let g:ycm_semantic_triggers = {
+  \   'c,cpp,python,sh': ['re!\w{3}'],
+  \ }
+let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_key_invoke_completion = '<C-l>'
 let g:ycm_filetype_whitelist = { 
