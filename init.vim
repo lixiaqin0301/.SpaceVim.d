@@ -58,7 +58,8 @@ let g:neomake_gcc_args = [
     \ '-D_REENTRANT'
     \ ]
 let g:neomake_shellcheck_args = ['-fgcc']
-let g:spacevim_expand_tab = 0
+let g:neomake_echo_current_error = 0
+" let g:spacevim_expand_tab = 0
 " }}}
 
 " SpaceVim Layers: {{{
