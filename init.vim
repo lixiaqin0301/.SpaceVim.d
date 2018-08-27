@@ -55,6 +55,7 @@ let g:neomake_gcc_args = [
     \ '-DDEFAULT_CONFIG_FILE="/usr/local/squid/etc/squid.conf"',
     \ '-DDEFAULT_ACCESSLOG_PC_TEMPLATE="/usr/local/squid/var/logs/access_%host.log"',
     \ '-DDEFAULT_SQUID_CLIENT="/usr/local/squid/bin/squidclient"', 
+    \ '-DWS_SQUID_VERSION="squid-2.6.11-57"',
     \ '-D_REENTRANT'
     \ ]
 let g:neomake_shellcheck_args = ['-fgcc']
@@ -62,6 +63,7 @@ let g:spacevim_expand_tab = 0
 " }}}
 
 " SpaceVim Layers: {{{
+call SpaceVim#layers#load('shell')
 call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('autocomplete', {
     \ 'auto-completion-return-key-behavior' : 'nil',
