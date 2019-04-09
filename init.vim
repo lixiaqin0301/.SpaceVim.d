@@ -41,6 +41,7 @@ let g:ycm_filetype_whitelist = {
   \ }
 let g:spacevim_custom_plugins = [
   \ ['lyuts/vim-rtags'],
+  \ ['WolfgangMehner/awk-support'],
   \ ]
 let g:neomake_c_enabled_makers = ['gcc']
 let g:c_syntax_for_h = 1
