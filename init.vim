@@ -75,5 +75,6 @@ call SpaceVim#layers#load('autocomplete', {
     \ 'auto-completion-enable-snippets-in-popup' : 0
     \ })
 call SpaceVim#layers#load('VersionControl')
+call SpaceVim#layers#load('debug')
 " }}}
 
