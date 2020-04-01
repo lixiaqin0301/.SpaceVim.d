@@ -2,9 +2,7 @@ import os
 import ycm_core
 
 flags = [
-    '-Wall',
-    '-Wextra',
-    '-Werror',
+    '-Wno-error',
     '-std=gnu11',
     '-D_GNU_SOURCE',
     '-x',
@@ -12,7 +10,7 @@ flags = [
     '-I',
     '.',
     '-isystem',
-    '/usr/lib/gcc/x86_64-redhat-linux/7/include',
+    '/usr/lib/gcc/x86_64-redhat-linux/9/include',
     '-isystem',
     '/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include',
     '-isystem',
