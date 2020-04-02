@@ -31,6 +31,8 @@
     enable_ycm = true
     bootstrap_after = "config#after"
     default_indent = 4
+    enable_neomake = false
+    enable_ale = true
 
 # Enable autocomplete layer
 [[layers]]
@@ -42,6 +44,13 @@ auto-completion-tab-key-behavior = "cycle"
 name = 'shell'
 default_position = 'top'
 default_height = 30
+
+[[layers]]
+name = "checkers"
+show_cursor_error = false
+
+[[layers]]
+name = "gtags"
 
 [[custom_plugins]]
 name="Valloric/YouCompleteMe"
