@@ -51,6 +51,9 @@ name = "format"
 [[layers]]
 name = "lang#c"
 
+[[layers]]
+name = "lang#go"
+
 [[custom_plugins]]
 name="Valloric/YouCompleteMe"
 merge=0
